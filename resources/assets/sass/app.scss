@@ -1,6 +1,8 @@
 
 // Fonts
 @import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600");
+@import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600");
+@import url('https://fonts.googleapis.com/css?family=Cinzel');
 
 // Variables
 //@import "variables";
@@ -27,4 +29,26 @@ h1,h2{
 .logo-text{
   font-size:1.5rem;
   font-weight:bold;
+}
+.logotip{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.logotip-text{
+  font-size:30px;
+  font-weight:bold;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  font-family: 'Cinzel', serif;
+  text-decoration: underline;
+  text-align: center;
+  margin-top: -20px;
+}
+.logotip-text-small{
+  font-weight:bold;
+  letter-spacing: 1px;
+  margin-top: -10px;
+  text-align: center;
+  font-size:14px;
 }

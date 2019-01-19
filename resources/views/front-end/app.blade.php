@@ -15,7 +15,17 @@
 </head>
 <body>
 <section class="header-logo">
-    <div class="container"><h1 class="text-center">Кожевенная мастерская Дениса Распопова - Archil </h1></div>
+    <div class="container-fluid">
+        <div class="row">
+        <div class="col-lg-8"><h1 class="text-center">Кожевенная мастерская Дениса Распопова - ACHILL </h1></div>
+            <div class="col-lg-4">
+                <div class="phone-block">
+
+                </div>
+            </div>
+        </div>
+
+    </div>
 </section>
 
     <div id="app">

@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Raleway:300,400,600);/*!
+@import url(https://fonts.googleapis.com/css?family=Raleway:300,400,600);@import url(https://fonts.googleapis.com/css?family=Cinzel);/*!
  * Bootstrap v4.2.1 (https://getbootstrap.com/)
  * Copyright 2011-2018 The Bootstrap Authors
  * Copyright 2011-2018 Twitter, Inc.
@@ -11465,5 +11465,37 @@ h2 {
 .logo-text {
   font-size: 1.5rem;
   font-weight: bold;
+}
+
+.logotip {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.logotip-text {
+  font-size: 30px;
+  font-weight: bold;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  font-family: 'Cinzel', serif;
+  text-decoration: underline;
+  text-align: center;
+  margin-top: -20px;
+}
+
+.logotip-text-small {
+  font-weight: bold;
+  letter-spacing: 1px;
+  margin-top: -10px;
+  text-align: center;
+  font-size: 14px;
 }
 

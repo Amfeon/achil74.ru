@@ -3,9 +3,16 @@
     <section class="header">
         <div class="container">
             <div class="row">
-                <div class="col-lg-5 align-self-center text-right logo-text">Кожанные изделия</div>
-                <div class="col-lg-2"><img src="css/img/logo.svg"></div>
-                <div class="col-lg-5 align-self-center text-left logo-text">Ручной работы</div>
+                <div class="col-lg-4 align-self-center text-right logo-text">Кожанные изделия</div>
+                <div class="col-lg-4">
+                    <div class="logotip">
+                        <img src="css/img/logo.svg">
+                        <span class="logotip-text">Achill</span>
+                        <span class="logotip-text-small">Leather craft</span>
+                    </div>
+
+                </div>
+                <div class="col-lg-4 align-self-center text-left logo-text">Ручной работы</div>
             </div>
         </div>
     </section>
