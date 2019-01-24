@@ -158,6 +158,61 @@ h1,h2{
     flex-grow: 1;
   }
 }
+.footer{
+  background: $color-yellow;
+  padding-bottom: 50px;
+  .social{
+    display: flex;
+    flex-wrap: wrap;
+    ul{
+    display: flex;
+      flex-wrap: wrap;
+      margin: 0;
+    }
+    .social__item {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100px;
+      height: 100px;
+      //background: $color-red;
+      border-radius: 50%;
+      border: 1px solid #000000;
+      position: relative;
+      margin: 5px;
+      transition: background .4s;
+      i {
+        font-size: 36px;
+        color: #000000;
+        transition: color .8s
+      }
+      &:hover {
+        cursor: pointer;
+        background: #000000;
+        transition: background .8s;
+        i{
+          color: $color-yellow;
+        }
+      }
+    }
+  }
+  &-title{
+    font-size:30px;
+    width: 100%;
+  }
+  ul{
+    padding-left: 0;
+  }
+  li{
+    list-style: none;
+    font-size:20px;
+  }
+  .phone{
+    color: #000000;
+    font-size: 20px;
+    margin-left: 20px;
+  }
+}
 /*
 .header{
   margin-top: 50px;

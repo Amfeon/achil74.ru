@@ -2943,6 +2943,57 @@ h1, h2 {
     -ms-flex-positive: 1;
     flex-grow: 1; }
 
+.footer {
+  background: #FECE1A;
+  padding-bottom: 50px; }
+  .footer .social {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap; }
+    .footer .social ul {
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+      margin: 0; }
+    .footer .social .social__item {
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-pack: center;
+      justify-content: center;
+      -ms-flex-align: center;
+      align-items: center;
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      border: 1px solid #000000;
+      position: relative;
+      margin: 5px;
+      transition: background .4s; }
+      .footer .social .social__item i {
+        font-size: 36px;
+        color: #000000;
+        transition: color .8s; }
+      .footer .social .social__item:hover {
+        cursor: pointer;
+        background: #000000;
+        transition: background .8s; }
+        .footer .social .social__item:hover i {
+          color: #FECE1A; }
+  .footer-title {
+    font-size: 30px;
+    width: 100%; }
+  .footer ul {
+    padding-left: 0; }
+  .footer li {
+    list-style: none;
+    font-size: 20px; }
+  .footer .phone {
+    color: #000000;
+    font-size: 20px;
+    margin-left: 20px; }
+
 /*
 .header{
   margin-top: 50px;

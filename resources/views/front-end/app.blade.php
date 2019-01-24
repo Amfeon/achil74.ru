@@ -12,6 +12,7 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/fontello.css') }}" rel="stylesheet">
 </head>
 <body>
 <section class="header">
@@ -30,7 +31,7 @@
                 </div>
             </div>
             <div class="col-lg-4 d-flex align-items-center justify-content-center">
-                <a class="phone" href="mailto:">Почта@gmail.com</a>
+                <a class="phone" href="mailto:achill74@mail.ru">achill74@mail.ru</a>
             </div>
         </div>
     </div>
@@ -89,8 +90,28 @@
 </section>
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
-<footer>
+<footer class="footer">
+    <div class="container">
+        <div class="row">
+            <h3 class="footer-title">Контакты</h3>
+            <div class="col-lg-6">
+                <ul>
+                    <li>Телефон:  <a  class = "phone" href="tel:+79026011595"> +7 (902) 601-15-95</a> </li>
+                    <li>Телефон:  <a  class = "phone" href="tel:+79026011595"> +7 (902) 601-15-95</a> </li>
+                    <li> Почта:   <a class="phone" href="mailto:achill74@mail.ru">achill74@mail.ru</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-6">
+                <div class="social">
+                    <ul>
+                        <li class="social__item"><a href="#"> <i class="demo-icon icon-vkontakte"></i></a></li>
+                        <li class="social__item"><a href="https://www.instagram.com/achill174"> <i class="demo-icon icon-instagram"></i></a></li>
 
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
 </footer>
 </body>
 </html>
