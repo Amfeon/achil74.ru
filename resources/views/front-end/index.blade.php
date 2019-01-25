@@ -1,61 +1,64 @@
 @extends('front-end.app')
 @section('content')
-    <section class="header">
+    <section class="main">
         <div class="container">
-            <div class="row" >
-                <div class="col-lg-12 d-flex flex-column">
-                    <span class="header-subtitle">Мастерская Дениса Распопова</span>
-                    <h1 class="header-title">Оригинальные кожанные изделия ручной работы</h1>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="main_item">
+                        <span class="main_subtext">Мастерская Дениса Распопова</span>
+                        <h2 main="main_title"> Кожанные изделия ручной работы</h2>
+                        <a class="main_botton" href="#">Посмотреть работы</a>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
-<section class="servis">
-    <div class="container text-center bg-light">
-        <div class="row justify-content-center"><h2>Примеры работ</h2></div>
-
-        <div class="row">
-            <div class="desc">
-                <p>Я занимаюсь пошивом изделий из натуральной кожи. Все изделия изготавливаются мной индивидуально,
-                    с учетом всех пожеланий и исключительно вручную. Я уделяю огромное внимание качеству и очень трепетно подхожу к выбору материалов для производства.</p>
+    <section class="goods">
+        <div class="container">
+            <h3>Мои Работы</h3>
+            <p>Я занимаюсь пошивом изделий из натуральной кожи. Все изделия изготавливаются мной индивидуально, с учетом всех пожеланий и исключительно вручную. Я уделяю огромное внимание качеству и очень трепетно подхожу к выбору материалов для производства.</p>
+            <div class="row mt-1">
+                <div class="col-lg-4 mt-5">
+                    <div class="card">
+                        <div class="card_img">
+                            <img src="/images/w1.jpg ">
+                            <div class="card_price">Цена: 3000</div>
+                        </div>
+                        <div class="card_text"><p>Кошель из шкуры с жопы дракона</p></div>
+                        <a class="card_botton">Заказать</a>
+                    </div>
+                </div>
+                <div class="col-lg-4 mt-5">
+                    <div class="card">
+                        <div class="card_img">
+                            <img src="/images/w2.jpg ">
+                            <div class="card_price">Цена: 300</div>
+                        </div>
+                        <div class="card_text"><p>Кошель из шкуры с жопы дракона, но не девственной</p></div>
+                        <a class="card_botton">Заказать</a>
+                    </div>
+                </div>
+                <div class="col-lg-4 mt-5">
+                    <div class="card">
+                        <div class="card_img">
+                            <img src="/images/w3.jpg ">
+                            <div class="card_price">Цена: почти даром</div>
+                        </div>
+                        <div class="card_text"><p> Материал – итальянская натуральная кожа растительного дубления 1,6мм (КРС), вощеный шнур, металлическая кнопка(никель). Плюс аякий там текст текс ттекстте кстт ексттекст</p></div>
+                        <a class="card_botton">Заказать</a>
+                    </div>
+                </div>
+                <div class="col-lg-4 mt-5">
+                    <div class="card">
+                        <div class="card_img">
+                            <img src="/images/w3.jpg ">
+                            <div class="card_price">Цена: почти даром</div>
+                        </div>
+                        <div class="card_text"><p> Материал – итальянская натуральная кожа растительного дубления 1,6мм (КРС), вощеный шнур, металлическая кнопка(никель). Плюс аякий там текст текс ттекстте кстт ексттекст</p></div>
+                        <a class="card_botton">Заказать</a>
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="row d-flex">
-            <div class="col-lg-4">
-                <div class="card m-1" >
-                    <img src="{{asset('images/w1.jpg')}}" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <p class="card-text">Кошель из шкуры с жопы дракона</p>
-                        <p class="card-text">Цена: 3000р</p>
-                        <p class="card-text">Производство занимает: 10 дней </p>
-                        <a href="#" class="btn btn-primary">Заказать</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4">
-                <div class="card m-1" >
-                    <img src="{{asset('images/w1.jpg')}}" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <p class="card-text">Кошель из шкуры с жопы дракона</p>
-                        <p class="card-text">Цена: 3000р</p>
-                        <p class="card-text">Производство занимает: 10 дней </p>
-                        <a href="#" class="btn btn-primary">Заказать</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4">
-                <div class="card m-1" >
-                    <img src="{{asset('images/w1.jpg')}}" class="card-img-top"  alt="...">
-                    <div class="card-body">
-                        <p class="card-text">Кошель из шкуры с жопы дракона</p>
-                        <p class="card-text">Цена: 3000р</p>
-                        <p class="card-text">Производство занимает: 10 дней </p>
-                        <a href="#" class="btn btn-primary">Заказать</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-</section>
+    </section>
 @endsection
