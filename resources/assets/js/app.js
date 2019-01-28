@@ -20,6 +20,9 @@ Vue.component('modal', require('./components/ModalForm.vue'));
 
 const app = new Vue({
     el: '#app',
+    headers: {
+        'X-CSRF-Token': $('meta[name="csrf_token"]').attr('content')
+    },
     data:{
         showModal:false
     }

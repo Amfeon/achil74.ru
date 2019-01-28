@@ -1099,10 +1099,13 @@ Vue.component('example', __webpack_require__(39));
 Vue.component('modal', __webpack_require__(42));
 
 var app = new Vue({
-  el: '#app',
-  data: {
-    showModal: false
-  }
+    el: '#app',
+    headers: {
+        'X-CSRF-Token': $('meta[name="csrf_token"]').attr('content')
+    },
+    data: {
+        showModal: false
+    }
 });
 
 /***/ }),
@@ -43505,11 +43508,44 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     mounted: function mounted() {
-        console.log('Component mounted.');
+        console.log(output);
+    },
+    data: function data() {
+        return {
+            name: '',
+            phone: '',
+            output: ''
+        };
+    },
+
+    methods: {
+        formSubmit: function formSubmit(e) {
+            e.preventDefault(); // останавливает событие
+            var currentObj = this;
+            axios.post('/contact', {
+                name: this.name,
+                phone: this.phone
+            }).then(function (response) {
+                currentObj.output = response.data;
+            }).catch(function (error) {
+                currentObj.output = error;
+            });
+        }
     }
+
 });
 
 /***/ }),
@@ -43520,58 +43556,103 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
-}
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "modal-container" }, [
-      _c("div", { staticClass: "modal-wrapper" }, [
-        _c("div", { staticClass: "modal-item" }, [
-          _c(
-            "form",
-            {
-              staticClass: "bottoms_block",
-              attrs: {
-                method: "POST",
-                action: "/task/create",
-                "accept-charset": "UTF-8"
-              }
-            },
-            [
-              _c("label", { attrs: { for: "name" } }, [
-                _vm._v("Ваше имя (Обязательно)")
-              ]),
-              _vm._v(" "),
-              _c("input", {
-                attrs: { name: "name", type: "text", id: "name" }
-              }),
-              _vm._v(" "),
-              _c("label", { attrs: { for: "phone" } }, [
-                _vm._v("Телефон (Обязательно)")
-              ]),
-              _vm._v(" "),
-              _c("input", {
-                attrs: { name: "phone", type: "text", id: "phone" }
-              }),
-              _vm._v(" "),
-              _c("input", {
-                staticClass: "botton",
-                attrs: {
-                  id: "mailSend",
-                  type: "submit",
-                  value: "Отправить заявку"
+  return _c("div", { staticClass: "modal-mask" }, [
+    _c("div", { staticClass: "modal-wrapper" }, [
+      _c("div", { staticClass: "modal-container" }, [
+        _c("div", { staticClass: "modal-header" }, [
+          _c("form", { on: { submit: _vm.formSubmit } }, [
+            _c("label", { attrs: { for: "name" } }, [
+              _vm._v("Ваше имя (Обязательно)")
+            ]),
+            _vm._v(" "),
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.name,
+                  expression: "name"
                 }
-              })
-            ]
-          )
-        ])
+              ],
+              attrs: { type: "text", id: "name" },
+              domProps: { value: _vm.name },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.name = $event.target.value
+                }
+              }
+            }),
+            _vm._v(" "),
+            _c("label", { attrs: { for: "phone" } }, [
+              _vm._v("Телефон (Обязательно)")
+            ]),
+            _vm._v(" "),
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.phone,
+                  expression: "phone"
+                }
+              ],
+              attrs: { type: "text", id: "phone" },
+              domProps: { value: _vm.phone },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.phone = $event.target.value
+                }
+              }
+            }),
+            _vm._v(" "),
+            _c("input", {
+              staticClass: "botton",
+              attrs: {
+                id: "mailSend",
+                type: "submit",
+                value: "Отправить заявку"
+              }
+            })
+          ])
+        ]),
+        _vm._v(" "),
+        _c(
+          "div",
+          { staticClass: "modal-footer" },
+          [
+            _vm._t("footer", [
+              _vm._v(
+                "\n                    " +
+                  _vm._s(_vm.output) +
+                  "\n                    "
+              ),
+              _c(
+                "button",
+                {
+                  staticClass: "modal-default-button",
+                  on: {
+                    click: function($event) {
+                      _vm.$emit("close")
+                    }
+                  }
+                },
+                [_vm._v("\n                        OK\n                    ")]
+              )
+            ])
+          ],
+          2
+        )
       ])
     ])
-  }
-]
+  ])
+}
+var staticRenderFns = []
 render._withStripped = true
 module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {

@@ -34,15 +34,11 @@
     </div>
 </section>
 @yield('content')
+<!-- app -->
 <div id="app">
     <button id="show-modal" v-on:click="showModal = true">Show Modal</button>
-
-    <modal v-if="showModal" close="showModal = false">
-
-    <h3 slot="header">custom header</h3>
+    <modal v-if="showModal" v-on:close="showModal = false">
     </modal>
-
-
 </div>
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
