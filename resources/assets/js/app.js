@@ -8,6 +8,10 @@
 require('./bootstrap');
 
 window.Vue = require('vue');
+import Vue from 'vue';
+import VueSweetalert2 from 'vue-sweetalert2';
+
+Vue.use(VueSweetalert2);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

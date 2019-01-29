@@ -18,6 +18,4 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::post('/contact', function (){
-    return 'hello';
-});
+Route::post('/contact','Admin\ContactController@store');

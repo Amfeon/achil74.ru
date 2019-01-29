@@ -33,11 +33,11 @@
         </div>
     </div>
 </section>
+<div id="app">
 @yield('content')
 <!-- app -->
-<div id="app">
-    <button id="show-modal" v-on:click="showModal = true">Show Modal</button>
-    <modal v-if="showModal" v-on:close="showModal = false">
+
+    <modal v-if="showModal" v-on:close="showModal = false" v-on:done="showModal = false">
     </modal>
 </div>
     <!-- Scripts -->

@@ -7,17 +7,13 @@
                         <label for="name">Ваше имя (Обязательно)</label>
                         <input v-model="name" type="text" id="name">
                         <label for="phone">Телефон (Обязательно)</label>
-                        <input v-model="phone" type="text" id="phone">
-                        <input class="botton" id="mailSend" type="submit" value="Отправить заявку">
+                        <input v-model="phone" type="tel" id="phone" placeholder="+7" required>
+                        <div class="botton-group">
+                            <input class="botton" id="mailSend" type="submit" value="Отправить заявку" v-on:click="$emit('done')">
+                            <button class="botton cancel" v-on:click="$emit('close')">отмена</button>
+                        </div>
                     </form>
-                </div>
-                <div class="modal-footer">
-                    <slot name="footer">
-                        {{output}}
-                        <button class="modal-default-button" v-on:click="$emit('close')">
-                            OK
-                        </button>
-                    </slot>
+                    {{ output }}
                 </div>
             </div>
         </div>
@@ -26,7 +22,7 @@
 <script>
     export default {
         mounted() {
-            console.log(output)
+            console.log('Смонтирован')
         },
         data() {
             return {
@@ -51,6 +47,5 @@
                     });
             }
         }
-
     }
 </script>

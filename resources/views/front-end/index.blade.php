@@ -25,7 +25,7 @@
                             <div class="card_price">Цена: 3000</div>
                         </div>
                         <div class="card_text"><p>Кошель из шкуры с жопы дракона</p></div>
-                        <a class="card_botton">Заказать</a>
+                        <a class="card_botton" v-on:click="showModal = true">Заказать</a>
                     </div>
                 </div>
                 <div class="col-lg-4 mt-5">
