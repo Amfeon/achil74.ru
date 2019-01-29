@@ -37,7 +37,7 @@
 @yield('content')
 <!-- app -->
 
-    <modal v-if="showModal" v-on:close="showModal = false" v-on:done="showModal = false">
+    <modal v-if="showModal" v-on:close="showModal = false">
     </modal>
 </div>
     <!-- Scripts -->

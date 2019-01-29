@@ -28,12 +28,15 @@
             return {
                 name: '',
                 phone: '',
-                output: ''
+                output: '',
+                success:''
             };
         },
         methods:{
             formSubmit(e){
+
                 e.preventDefault();// останавливает событие
+
                 let currentObj = this;
                 axios.post('/contact', {
                     name: this.name,
@@ -41,6 +44,13 @@
                 })
                 .then(function (response) {
                    currentObj.output = response.data;
+
+                    swal.fire({
+                        type: 'success',
+                        title: '',
+                        text: 'Ваша заявка отправлена',
+                        footer: ''
+                    })
                   })
                    .catch(function (error) {
                     currentObj.output = error;
