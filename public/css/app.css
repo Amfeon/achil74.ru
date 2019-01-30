@@ -6895,19 +6895,20 @@ h2 {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .botton-group .botton {
-  margin: 0;
+  margin-top: 15px;
   width: 45%;
   padding: 10px 5px;
   background: #42B983;
   color: white;
   border: none;
   cursor: pointer;
+  text-align: center;
 }
 
 .botton-group .botton.cancel {

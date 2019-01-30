@@ -1,5 +1,5 @@
 <template>
-    <div class="modal-mask"  v-on:click="$emit('close')">
+    <div class="modal-mask" >
         <div class="modal-wrapper">
             <div class="modal-container">
                 <div class="modal-header">
@@ -12,6 +12,9 @@
                             <input class="botton" id="mailSend" type="submit" value="Отправить заявку" v-on:click="$emit('done')">
                         </div>
                     </form>
+                    <div class="botton-group">
+                        <div class="botton cancel"  v-on:click="$emit('close')"> Отмена</div>
+                    </div>
                     {{ output }}
                 </div>
             </div>
@@ -27,8 +30,7 @@
             return {
                 name: '',
                 phone: '',
-                output: '',
-                success:''
+                output: ''
             };
         },
         methods:{
@@ -41,10 +43,8 @@
                 })
                     .then(function () {
                         swal.fire({
-                            type: 'success',
-                            title: '',
-                            text: 'Ваша заявка отправлена',
-                            footer: ''
+                           type: 'success',
+                            text: 'Ваша заявка отправлена'
                         })
                     })
          /*       .then(function (response) {

@@ -26,16 +26,10 @@ const app = new Vue({
     },
     methods:{
         closeBotton(){
-            //this.showModal=!this.showModal;
+            this.showModal=!this.showModal;
         },
         doneBotton(){
            // this.showModal=!this.showModal;
-         /*   swal.fire({
-                type: 'success',
-                title: '',
-                text: 'Ваша заявка отправлена',
-                footer: ''
-            })*/
         }
     }
 });

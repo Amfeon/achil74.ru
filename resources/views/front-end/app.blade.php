@@ -37,7 +37,7 @@
 @yield('content')
 <!-- app -->
 
-    <modal v-if="showModal" v-on:close="closeBotton" v-on:done="doneBotton">
+    <modal v-show="showModal" v-on:close="closeBotton" v-on:done="doneBotton">
     </modal>
 </div>
     <!-- Scripts -->
@@ -48,8 +48,8 @@
             <h3 class="footer-title">Контакты</h3>
             <div class="col-lg-6">
                 <ul>
-                    <li>Телефон:  <a  class = "phone" href="tel:+79026011595"> +7 (902) 601-15-95</a> </li>
-                    <li>Телефон:  <a  class = "phone" href="tel:+79026011595"> +7 (902) 601-15-95</a> </li>
+                    <li>Телефон:  <a  class = "phone" href="tel:+79026011595"> +7 (902)-601-15-95</a> </li>
+                    <li>Телефон:  <a  class = "phone" href="tel:+79043029707"> +7 (904)-30-29-707</a> </li>
                     <li> Почта:   <a class="phone" href="mailto:achill74@mail.ru">achill74@mail.ru</a></li>
                 </ul>
             </div>
