@@ -23,5 +23,19 @@ const app = new Vue({
     el: '#app',
     data:{
         showModal:false
+    },
+    methods:{
+        closeBotton(){
+            //this.showModal=!this.showModal;
+        },
+        doneBotton(){
+           // this.showModal=!this.showModal;
+         /*   swal.fire({
+                type: 'success',
+                title: '',
+                text: 'Ваша заявка отправлена',
+                footer: ''
+            })*/
+        }
     }
 });
