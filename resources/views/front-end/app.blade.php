@@ -46,9 +46,9 @@
                 <div class="modal-header">
                     <form action="/contact" method="post">
                     <label for="name">Ваше имя (Обязательно)</label>
-                    <input v-model="name" type="text" id="name" required>
+                    <input type="text" id="name" required>
                     <label for="phone">Телефон (Обязательно)</label>
-                    <input v-model="phone" type="tel" id="phone" placeholder="+7" required>
+                    <input type="tel" id="phone" placeholder="+7" required>
                     <div class="botton-group">
                         <input id="done" class="botton" id="mailSend" type="submit" value="Отправить заявку">
                         <div id="cancel" class="botton cancel"> Отмена</div>

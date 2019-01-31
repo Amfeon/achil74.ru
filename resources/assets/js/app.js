@@ -54,7 +54,9 @@ window.onload = function() {
     }
     document.getElementById('done').addEventListener('click',getAjax);
 function getAjax() {
-    console.log('error');
+    let name = document.getElementById('name').value;
+    
+    console.log(name);
 
 }
    // document.getElementById('modalForm').style.display='table'

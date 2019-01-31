@@ -130,7 +130,9 @@ for (var i = 0; i < showForm.length; i++) {
 }
 document.getElementById('done').addEventListener('click', getAjax);
 function getAjax() {
-    console.log('error');
+    var name = document.getElementById('name').value;
+
+    console.log(name);
 }
 // document.getElementById('modalForm').style.display='table'
 
