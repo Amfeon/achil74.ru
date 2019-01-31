@@ -39,6 +39,25 @@
 
     <modal v-show="showModal" v-on:close="closeBotton" v-on:done="doneBotton">
     </modal>
+
+    <div id="modalForm" class="modal-mask" >
+        <div class="modal-wrapper">
+            <div class="modal-container">
+                <div class="modal-header">
+                    <form action="/contact" method="post">
+                    <label for="name">Ваше имя (Обязательно)</label>
+                    <input v-model="name" type="text" id="name" required>
+                    <label for="phone">Телефон (Обязательно)</label>
+                    <input v-model="phone" type="tel" id="phone" placeholder="+7" required>
+                    <div class="botton-group">
+                        <input id="done" class="botton" id="mailSend" type="submit" value="Отправить заявку">
+                        <div id="cancel" class="botton cancel"> Отмена</div>
+                    </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
