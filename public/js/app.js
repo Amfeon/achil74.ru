@@ -129,10 +129,21 @@ for (var i = 0; i < showForm.length; i++) {
     });
 }
 document.getElementById('done').addEventListener('click', getAjax);
-function getAjax() {
+function getAjax(e) {
+    e.preventDefault();
     var name = document.getElementById('name').value;
-
-    console.log(name);
+    var phone = document.getElementById('phone').value;
+    var phone_regexp = /^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$/;
+    var name_regexp = /[а-яА-Яa-zA-ZёЁ]{3,15} /;
+    var result_name = name.search(name_regexp);
+    var result = phone.search(phone_regexp);
+    if (!result_name && name != '') {
+        console.log('valid_phone');
+        if (!result && !phone) {
+            console.log('valid_name');
+        }
+    }
+    //console.log(phone.match(regexp));
 }
 // document.getElementById('modalForm').style.display='table'
 

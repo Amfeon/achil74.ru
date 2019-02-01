@@ -45,6 +45,7 @@
             <div class="modal-container">
                 <div class="modal-header">
                     <form action="/contact" method="post">
+                        <input type="hidden" value="{{csrf_token()}}">
                     <label for="name">Ваше имя (Обязательно)</label>
                     <input type="text" id="name" required>
                     <label for="phone">Телефон (Обязательно)</label>
