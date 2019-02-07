@@ -97,14 +97,14 @@ function getFetch(name,phone) {
             return response.json();
         })
         .then(function (data) {
-            console.log(name);
+        //    console.log(name);
             document.getElementById('modalForm').style.display='none'
             swal.fire({
                 type: 'success',
                 text: 'Ваша заявка отправлена'
             })
-        })
-        .catch(alert);
+        });
+       // .catch(alert);
 }
 
 

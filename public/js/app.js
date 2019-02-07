@@ -68,7 +68,8 @@
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(1);
-module.exports = __webpack_require__(3);
+__webpack_require__(3);
+module.exports = __webpack_require__(4);
 
 
 /***/ }),
@@ -170,13 +171,14 @@ function getFetch(name, phone) {
         // alert(response.status); // 200
         return response.json();
     }).then(function (data) {
-        console.log(name);
+        //    console.log(name);
         document.getElementById('modalForm').style.display = 'none';
         swal.fire({
             type: 'success',
             text: 'Ваша заявка отправлена'
         });
-    }).catch(alert);
+    });
+    // .catch(alert);
 }
 
 /***/ }),
@@ -2754,6 +2756,12 @@ if (typeof window !== 'undefined' && window.Sweetalert2){  window.Sweetalert2.ve
 
 /***/ }),
 /* 3 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 4 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin

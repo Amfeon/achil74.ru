@@ -19,3 +19,5 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::post('/contact','Admin\ContactController@store');
+Route::get('/admin','Admin\ContactController@index');
+Route::get('/admin/task/delete/{id}','Admin\ContactController@delete');

@@ -15,4 +15,13 @@ class Task extends Model
         $this->writen=0;
         $this->save();
     }
+    public function getTask(){
+        return $this->all();
+    }
+    public  function deleteTask($id){
+        $this->destroy($id);
+       /* $a=$this->find($id);
+        $a->delete();*/
+    }
+
 }
