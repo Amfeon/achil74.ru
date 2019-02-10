@@ -1,1 +1,11 @@
 @import "node_modules/bootstrap/scss/bootstrap";
+.item{
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  min-height: 300px;
+  border: 1px solid #000;
+  border-radius: 20px;
+  justify-content: center;
+  align-items: center;
+}

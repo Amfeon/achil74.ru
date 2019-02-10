@@ -1,23 +1,19 @@
 @extends('layouts.app')
 @section('content')
-<div class="container">
-    <table class="table">
-        <thead>
-        <tr>
-            <th scope="col">Имя</th>
-            <th scope="col">Телефон</th>
-            <th scope="col">Действие</th>
-        </tr>
-        </thead>
-        <tbody>
-        @foreach($tasks as $task)
-        <tr @if(!$task->writen) style="font-weight: bold" @endif>
-            <td>{{$task->name}}</td>
-            <td>{{$task->phone}}</td>
-            <td><a href="/admin/task/delete/{{$task->id}}">delete</a></td>
-        </tr>
-        @endforeach
-        </tbody>
-    </table>
-</div>
+    <div class="container">
+      <div class="row">
+          <div class="col-lg-4">
+              <div class="item text-center">
+                      <h3 class="item__title ">Заявки</h3>
+                      <a href="{{route('tasks')}}" class="btn btn-success">Просмотреть заяки</a>
+              </div>
+          </div>
+          <div class="col-lg-4">
+              <div class="item text-center">
+                  <h3 class="item__title ">Услуги</h3>
+                  <a href="{{route('application')}}" class="btn btn-success">Редактировать услуги</a>
+              </div>
+          </div>
+      </div>
+    </div>
 @endsection

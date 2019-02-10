@@ -17,7 +17,7 @@ class ContactController extends Controller
     public function index(){
         $a=new Task();
         $data=$a->getTask();
-        return view('back-end.index', ['tasks'=>$data]);
+        return view('back-end.task', ['tasks'=>$data]);
 
     }
     public function delete($id){
@@ -29,4 +29,5 @@ class ContactController extends Controller
     public function watched(){
         
     }
+    
 }
