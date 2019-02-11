@@ -15,4 +15,10 @@ class ApplicationController extends Controller
     public function create(){
         return view('back-end.create');
     }
+    public function store(Request $request){
+        $app=new Application();
+        $file=$request->file('image');
+        $app->createApplication($request,$file);
+        return redirect(route('tasks'));
+    }
 }
