@@ -19,6 +19,11 @@ class ApplicationController extends Controller
         $app=new Application();
         $file=$request->file('image');
         $app->createApplication($request,$file);
-        return redirect(route('tasks'));
+        return redirect(route('application'));
+    }
+    public function deleteApp($id){
+        $a=new Application();
+        $a->del($id);
+        return redirect(route('application'));
     }
 }

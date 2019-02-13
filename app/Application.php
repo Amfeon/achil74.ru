@@ -23,4 +23,8 @@ class Application extends Model
         $this->save();
         return $this->id;
     }
+    public function del($id)
+    {
+        $this->destroy($id);
+    }
 }

@@ -20,6 +20,7 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::post('/contact','Admin\ContactController@store');
 Route::post('/admin/store','ApplicationController@store')->name('store');
+Route::get('/admin/delete/{id}','ApplicationController@deleteApp')->name('deleteApp');
 //Route::get('/admin','Admin\ContactController@index');
 Route::get('/admin', function (){
   return view('back-end.index');  
