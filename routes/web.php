@@ -11,21 +11,23 @@
 |
 */
 
-Route::get('/', function () {
-    return view('front-end.index');
-});
+Route::get('/', 'ApplicationController@index');
 
 Auth::routes();
 
+Route::group(['middleware'=> 'auth'],function(){
+    Route::post('/admin/store','ApplicationController@store')->name('store');
+    Route::get('/admin/delete/{id}','ApplicationController@deleteApp')->name('deleteApp');
+    Route::get('/admin/edit/{id}','ApplicationController@editApp')->name('editApp');
+    Route::get('/admin', function (){
+        return view('back-end.index');
+    });
+    Route::get('/admin/task','Admin\ContactController@index')->name('tasks');
+    Route::get('/admin/application/','ApplicationController@getApplication')->name('application');
+    Route::get('/admin/application-create','ApplicationController@create')->name('create');
+    Route::get('/admin/task/delete/{id}','Admin\ContactController@delete');
+
+});
 Route::get('/home', 'HomeController@index')->name('home');
 Route::post('/contact','Admin\ContactController@store');
-Route::post('/admin/store','ApplicationController@store')->name('store');
-Route::get('/admin/delete/{id}','ApplicationController@deleteApp')->name('deleteApp');
 //Route::get('/admin','Admin\ContactController@index');
-Route::get('/admin', function (){
-  return view('back-end.index');  
-});
-Route::get('/admin/task','Admin\ContactController@index')->name('tasks');
-Route::get('/admin/application/','ApplicationController@getApplication')->name('application');
-Route::get('/admin/application-create','ApplicationController@create')->name('create');
-Route::get('/admin/task/delete/{id}','Admin\ContactController@delete');

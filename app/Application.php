@@ -27,4 +27,15 @@ class Application extends Model
     {
         $this->destroy($id);
     }
+    public function getApp($id){
+        return $this->find($id);
+    }
+    public function updateApp($request){
+       $app= $this->find($request->id);
+        $app->title=$request->title;
+        $app->src=$request->src;
+        $app->text=$request->text;
+        $app->price=$request->price;
+        $app->save();
+    }
 }

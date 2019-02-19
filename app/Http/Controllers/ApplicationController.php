@@ -17,6 +17,10 @@ class ApplicationController extends Controller
     }
     public function store(Request $request){
         $app=new Application();
+        if(isset($request->id)){
+            $app->updateApp($request);
+            return redirect(route('application'));
+        }
         $file=$request->file('image');
         $app->createApplication($request,$file);
         return redirect(route('application'));
@@ -25,5 +29,15 @@ class ApplicationController extends Controller
         $a=new Application();
         $a->del($id);
         return redirect(route('application'));
+    }
+    public function editApp($id){
+        $a = new Application();
+        $data=$a->getApp($id);
+        return view('back-end.editApp', ['data'=>$data]);
+    }
+    public function index(){
+        $app= new Application();
+        $data=$app->showApps();
+        return view('front-end.index',['data'=>$data]);
     }
 }

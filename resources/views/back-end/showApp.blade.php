@@ -11,7 +11,7 @@
                     <div class="card-body">
                         <h5 class="card-title">{{$item->title}}</h5>
                         <p class="card-text">{!! $item->text !!}</p>
-                        <a href="#" class="card_botton btn btn-warning">Изменить</a>
+                        <a href="{{route('editApp',$item->id)}}" class="card_botton btn btn-warning">Изменить</a>
                         <a href="{{route('deleteApp',$item->id)}}" class="card_botton btn btn-danger">Удалить</a>
                     </div>
                 </div>
