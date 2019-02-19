@@ -76,8 +76,8 @@
             <div class="col-lg-6">
                 <div class="social">
                     <ul>
-                        <li class="social__item"><a href="#"> <i class="demo-icon icon-vkontakte"></i></a></li>
-                        <li class="social__item"><a href="https://www.instagram.com/achill174"> <i class="demo-icon icon-instagram"></i></a></li>
+                        <li class="social__item"><a href="https://vk.com/achill74"  target="_blank"> <i class="demo-icon icon-vkontakte"></i></a></li>
+                        <li class="social__item"><a href="https://www.instagram.com/achill174"  target="_blank"> <i class="demo-icon icon-instagram"></i></a></li>
                     </ul>
                 </div>
             </div>

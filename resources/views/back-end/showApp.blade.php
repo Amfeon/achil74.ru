@@ -6,7 +6,7 @@
         </div>
         <div class="row d-flex mt-4">
             @foreach($data as $item)
-                <div class="card">
+                <div class="card" style="width: 300px">
                     <img class="card-img-top" src="/storage/{{$item->src}}" alt="Card image cap">
                     <div class="card-body">
                         <h5 class="card-title">{{$item->title}}</h5>
