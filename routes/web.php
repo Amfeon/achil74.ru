@@ -26,6 +26,12 @@ Route::group(['middleware'=> 'auth'],function(){
     Route::get('/admin/application/','ApplicationController@getApplication')->name('application');
     Route::get('/admin/application-create','ApplicationController@create')->name('create');
     Route::get('/admin/task/delete/{id}','Admin\ContactController@delete');
+    /*category*/
+    Route::get('/admin/category/','CategoryController@index')->name('category');
+    Route::get('/admin/category/create','CategoryController@create')->name('category.create');
+    Route::post('/admin/category/store','CategoryController@store')->name('category.store');
+    Route::get('/admin/category/delete/{id}','CategoryController@delete')->name('category.delete');
+    Route::get('/admin/category/edit/{id}','CategoryController@categoryEdit')->name('category.edit');
 
 });
 Route::get('/home', 'HomeController@index')->name('home');

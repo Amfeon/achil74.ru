@@ -18,8 +18,9 @@
             <h3>Мои Работы</h3>
 
             <p>Я занимаюсь пошивом изделий из натуральной кожи. Все изделия изготавливаются мной индивидуально, с учетом всех пожеланий и исключительно вручную. Я уделяю огромное внимание качеству и очень трепетно подхожу к выбору материалов для производства.</p>
-            @foreach($data as $item)
+
             <div class="row mt-1">
+                @foreach($data as $item)
                 <div class="col-lg-6 mt-5">
                     <div class="card">
                         <div class="card_img">
@@ -30,8 +31,9 @@
                         <a class="card_botton">Заказать</a>
                     </div>
                 </div>
-            </div>
                 @endforeach
+            </div>
+
         </div>
     </section>
 @endsection

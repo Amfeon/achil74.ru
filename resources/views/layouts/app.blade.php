@@ -44,5 +44,6 @@
 
     <!-- Scripts -->
 <script src="{{asset('js/summernote-lite.min.js')}}"></script>
+<script src="{{asset('js/admin.js')}}"></script>
 </body>
 </html>

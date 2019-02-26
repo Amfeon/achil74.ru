@@ -14,6 +14,12 @@
                   <a href="{{route('application')}}" class="btn btn-success">Редактировать услуги</a>
               </div>
           </div>
+          <div class="col-lg-4">
+              <div class="item text-center">
+                  <h3 class="item__title ">Категории</h3>
+                  <a href="{{route('category')}}" class="btn btn-success">Редактировать категории</a>
+              </div>
+          </div>
       </div>
     </div>
 @endsection
