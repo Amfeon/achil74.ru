@@ -32,6 +32,7 @@ Route::group(['middleware'=> 'auth'],function(){
     Route::post('/admin/category/store','CategoryController@store')->name('category.store');
     Route::get('/admin/category/delete/{id}','CategoryController@delete')->name('category.delete');
     Route::get('/admin/category/edit/{id}','CategoryController@categoryEdit')->name('category.edit');
+    Route::post('/admin/ajax-image','CategoryController@ajax');
 
 });
 Route::get('/home', 'HomeController@index')->name('home');

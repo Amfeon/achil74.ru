@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Http\Request;
 use App\Category;
 class CategoryController extends Controller
@@ -35,5 +36,11 @@ class CategoryController extends Controller
         $a= new Category();
         $data=$a->getCat($id);
         return view('back-end.category.catEdit',['category'=>$data]);
+    }
+    public function ajax(Request $request){
+        if ($request->hasFile('iamge')) {
+            //
+        }
+
     }
 }
