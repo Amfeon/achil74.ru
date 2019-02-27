@@ -7,7 +7,7 @@
 window.onload = function() {
     let image = document.getElementById('thumnailImage');
     let changes = document.getElementById('thumnailEdit');
-    //let input = document.querySelector('input[type="file"]')
+    let hiddenImage= document.getElementById('image');
     const token= document.querySelector('meta[name="csrf-token"]').content;
     changes.addEventListener("change",function (e) {
         //ajax запрос
@@ -15,7 +15,6 @@ window.onload = function() {
         let data= new FormData();
        data.append('image',changes.files[0]);
         data.append('bob','fuck');
-        console.log(data.get('bob'));
         fetch('/admin/ajax-image',{
             method: "POST",
             headers: {
@@ -27,11 +26,13 @@ window.onload = function() {
         })
             .then(function (response) {
                 // alert(response.status); // 200
-            //    alert('good');
-                let data = JSON.parse(response);
-                console.log(data);
-                image.setAttribute('src',data.path);
-                //return response.json();
+                //
+                return response.json();
+            })
+            .then(function (data) {
+                console.log(data.path);
+                image.setAttribute('src','/storage/' + data.path);
+                hiddenImage.setAttribute('value', data.path)
             })
             .catch(function(error){
               //  alert('no good');

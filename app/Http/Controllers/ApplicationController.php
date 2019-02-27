@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use DeepCopy\f001\A;
 use Illuminate\Http\Request;
 use App\Application;
+use App\Category;
 class ApplicationController extends Controller
 {
     public function getApplication(){
@@ -13,7 +14,9 @@ class ApplicationController extends Controller
         return view('back-end.showApp',['data'=>$data]);
     }
     public function create(){
-        return view('back-end.create');
+        $a = new Category();
+        $category= $a->getAll();
+        return view('back-end.create',['categories'=>$category]);
     }
     public function store(Request $request){
         $app=new Application();

@@ -85,7 +85,7 @@ module.exports = __webpack_require__(6);
 window.onload = function () {
     var image = document.getElementById('thumnailImage');
     var changes = document.getElementById('thumnailEdit');
-    //let input = document.querySelector('input[type="file"]')
+    var hiddenImage = document.getElementById('image');
     var token = document.querySelector('meta[name="csrf-token"]').content;
     changes.addEventListener("change", function (e) {
         //ajax запрос
@@ -93,7 +93,6 @@ window.onload = function () {
         var data = new FormData();
         data.append('image', changes.files[0]);
         data.append('bob', 'fuck');
-        console.log(data.get('bob'));
         fetch('/admin/ajax-image', {
             method: "POST",
             headers: {
@@ -104,11 +103,12 @@ window.onload = function () {
             body: data
         }).then(function (response) {
             // alert(response.status); // 200
-            //    alert('good');
-            var data = JSON.parse(response);
-            console.log(data);
-            image.setAttribute('src', data.path);
-            //return response.json();
+            //
+            return response.json();
+        }).then(function (data) {
+            console.log(data.path);
+            image.setAttribute('src', '/storage/' + data.path);
+            hiddenImage.setAttribute('value', data.path);
         }).catch(function (error) {
             //  alert('no good');
         });

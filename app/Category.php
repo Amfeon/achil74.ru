@@ -27,4 +27,10 @@ class Category extends Model
     public function getCat($id){
         return $this->find($id);
     }
+    public function updateCat($request){
+        $data=$this->find($request->id);
+        $data->title=$request->title;
+        $data->image=$request->image;
+        $data->save();
+    }
 }

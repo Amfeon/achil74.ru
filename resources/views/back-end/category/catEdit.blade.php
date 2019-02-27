@@ -19,7 +19,6 @@
 
             </div>
             <div class="col-lg-7">
-
                 <form class="col-lg-12" method="POST" action="{{route('category.store')}}" enctype="multipart/form-data" >
                     {{ csrf_field() }}
                     <div class="form-group">
@@ -28,7 +27,7 @@
                     </div>
                     <input type="hidden" name="id" value="{{$category['id']}}">
                     <input name="image" type="hidden" id="image"  value ="{{$category['image']}}" required>
-                    <button class="btn btn-info mt-2" type="submit"> Создать</button>
+                    <button class="btn btn-info mt-2" type="submit"> Сохранить</button>
                 </form>
 
             </div>

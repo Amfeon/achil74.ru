@@ -35,6 +35,9 @@
             <li class="nav-item">
                 <a class="nav-link" href="{{route('application')}}">Услуги</a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{route('category')}}">Категории</a>
+            </li>
         </ul>
     </div>
 </nav>

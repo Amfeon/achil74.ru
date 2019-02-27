@@ -20,6 +20,7 @@ class Application extends Model
         $this->src=$path;
         $this->text=$request->text;
         $this->price=$request->price;
+        $this->cat_id=$request->cat_id;
         $this->save();
         return $this->id;
     }

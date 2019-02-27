@@ -16,8 +16,10 @@ class CategoryController extends Controller
         return view('back-end.category',['data'=>$data]);
     }
     public function store(Request $request){
+        $a=new Category();
         if(isset($request->id)){
-
+            $a->updateCat($request);
+            return redirect()->route('category');
         }else{
             $a=new Category();
             $a->create($request);
@@ -45,8 +47,7 @@ class CategoryController extends Controller
         $path = $file->storeAs('thumbnail','thumnail_'.$name);
         $image = Image::make('storage/'.$path)->resize(400,265);
         $image->save('storage/thumbnail/'.$image->basename);
-     //  $path = "/storage/thumbnail/thumnail_thumnail_11.jpg";
-        return response()->json(['path'=>$path]);
+       return response()->json(['path'=>$path]);
 
     }
 }
