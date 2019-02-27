@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Http\Request;
 use App\Category;
+use Illuminate\Support\Facades\Storage;
+use Intervention\Image\Facades\Image;
 class CategoryController extends Controller
 {
     //
@@ -38,9 +40,13 @@ class CategoryController extends Controller
         return view('back-end.category.catEdit',['category'=>$data]);
     }
     public function ajax(Request $request){
-        if ($request->hasFile('iamge')) {
-            //
-        }
+        $file= $request->file('image');
+        $name= $file->getClientOriginalName();
+        $path = $file->storeAs('thumbnail','thumnail_'.$name);
+        $image = Image::make('storage/'.$path)->resize(400,265);
+        $image->save('storage/thumbnail/'.$image->basename);
+     //  $path = "/storage/thumbnail/thumnail_thumnail_11.jpg";
+        return response()->json(['path'=>$path]);
 
     }
 }
