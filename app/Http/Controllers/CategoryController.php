@@ -15,6 +15,12 @@ class CategoryController extends Controller
         $data=$a->getAll();
         return view('back-end.category',['data'=>$data]);
     }
+    public function showCat(){
+        $a=new Category();
+        $data=$a->getAll();
+        return view('front-end.index',['data'=>$data]);
+        
+    }
     public function store(Request $request){
         $a=new Category();
         if(isset($request->id)){

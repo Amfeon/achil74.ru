@@ -22,7 +22,7 @@
             </div>
             <div class="col-lg-4 ">
                 <div class="logotip">
-                    <a href="/"><img src="css/img/logo-y.svg"></a>
+                    <a href="/"><img src="/css/img/logo-y.svg"></a>
                     <span class="logotip-text">Achill</span>
                     <span class="logotip-text-small">Leather craft</span>
                 </div>

@@ -21,19 +21,17 @@
 
             <div class="row mt-1">
                 @foreach($data as $item)
-                <div class="col-lg-6 mt-5">
+                <a href="{{route('app.show',$item->id)}}" class="col-lg-5 mt-5" alt="{{$item->title}}">
                     <div class="card">
                         <div class="card_img">
-                            <img src="/storage/{{$item->src}} ">
-                            <div class="card_price">Цена: {{$item->price}} рублей</div>
+                            <img src="/storage/{{$item->image}} ">
+                            <div class="card_price">{{$item->title}}</div>
                         </div>
                         <div class="card_text">{!! $item->text !!}</div>
-                        <a class="card_botton">Заказать</a>
                     </div>
-                </div>
+                </a>
                 @endforeach
             </div>
-
         </div>
     </section>
 @endsection

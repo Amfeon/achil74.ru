@@ -11,7 +11,8 @@
 |
 */
 
-Route::get('/', 'ApplicationController@index');
+Route::get('/', 'CategoryController@showCat');
+Route::get('/category/{cat_id}', 'ApplicationController@showApp')->name('app.show');
 
 Auth::routes();
 

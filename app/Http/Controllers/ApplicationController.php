@@ -45,4 +45,13 @@ class ApplicationController extends Controller
         $data=$app->showApps();
         return view('front-end.index',['data'=>$data]);
     }
+    public function showApp($cat_id){
+        $a = new Application();
+        $b = new Category();
+        $category = $b->find($cat_id);
+        $data=$a->get()->where('cat_id',$cat_id);
+        return view('front-end.showApp',['data'=>$data, 'category'=>$category]);
+        
+    
+}
 }
