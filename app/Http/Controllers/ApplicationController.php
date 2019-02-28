@@ -35,8 +35,10 @@ class ApplicationController extends Controller
     }
     public function editApp($id){
         $a = new Application();
+        $b = new Category();
         $data=$a->getApp($id);
-        return view('back-end.editApp', ['data'=>$data]);
+        $categories=$b->getAll();
+        return view('back-end.editApp', ['data'=>$data,'categories'=>$categories]);
     }
     public function index(){
         $app= new Application();

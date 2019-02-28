@@ -37,6 +37,7 @@ class Application extends Model
         $app->src=$request->src;
         $app->text=$request->text;
         $app->price=$request->price;
+        $app->cat_id=$request->cat_id;
         $app->save();
     }
 }
