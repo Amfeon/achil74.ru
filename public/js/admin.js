@@ -77,11 +77,6 @@ module.exports = __webpack_require__(6);
 /***/ (function(module, exports) {
 
 
-/*document.getElementById('thumnailEdit').onchange(function (e) {
-    //e.preventDefault();
-    //alert(document.getElementById('thumnailImage').getAttribute('src'));
-});
-*/
 window.onload = function () {
     var image = document.getElementById('thumnailImage');
     var changes = document.getElementById('thumnailEdit');

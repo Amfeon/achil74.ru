@@ -17,7 +17,6 @@
             src="http://code.jquery.com/jquery-3.3.1.min.js"
             integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
             crossorigin="anonymous"></script>
-    <script src="/js/admin.js" rel="script"></script>
 
 </head>
 <body>
@@ -48,5 +47,15 @@
     <!-- Scripts -->
 <script src="{{asset('js/summernote-lite.min.js')}}"></script>
 <script src="{{asset('js/admin.js')}}"></script>
+<script>
+    $(document).ready(function() {
+        $('#summernote').summernote({
+                    height: 300                // set editor height
+        }
+
+        );
+
+    });
+</script>
 </body>
 </html>

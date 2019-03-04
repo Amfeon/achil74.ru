@@ -55,6 +55,27 @@ window.swal=require('sweetalert2');
         })
     }
 document.getElementById('done').addEventListener('click',getAjax);
+document.getElementById('seeWorks').addEventListener('click',animationScroll);
+function animationScroll(e){
+    let V=1;
+    e.preventDefault(); //отменяем стандартное поведение
+    var w = window.pageYOffset,  // производим прокрутка прокрутка
+        hash = this.href.replace(/[^#]*(.*)/, '$1');  // к id элемента, к которому нужно перейти
+    t = document.querySelector(hash).getBoundingClientRect().top;  // отступ от окна браузера до id
+        start = null;
+    requestAnimationFrame(step);  // подробнее про функцию анимации [developer.mozilla.org]
+    function step(time) {
+        if (start === null) start = time;
+        var progress = time - start,
+            r = (t < 0 ? Math.max(w - progress/V, w + t) : Math.min(w + progress/V, w + t));
+        window.scrollTo(0,r);
+        if (r != w + t) {
+            requestAnimationFrame(step)
+        } else {
+            location.hash = hash;  // URL с хэшем
+        }
+    }
+}
 function getAjax(e) {
     e.preventDefault();
     let name = document.getElementById('name').value;

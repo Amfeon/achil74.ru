@@ -7,13 +7,13 @@
                     <div class="main_item">
                         <span class="main_subtext">Мастерская Дениса Распопова</span>
                         <h2 main="main_title"> Кожанные изделия ручной работы</h2>
-                        <a class="main_botton" href="#">Посмотреть работы</a>
+                        <a id ="seeWorks" class="main_botton" href="#goods">Посмотреть работы</a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <section class="goods">
+    <section id = "goods" class="goods">
         <div class="container">
             <h3>Мои Работы</h3>
 
