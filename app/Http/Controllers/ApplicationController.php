@@ -6,6 +6,8 @@ use DeepCopy\f001\A;
 use Illuminate\Http\Request;
 use App\Application;
 use App\Category;
+use Intervention\Image\Facades\Image;
+use App\AppImage;
 class ApplicationController extends Controller
 {
     public function getApplication(){
@@ -25,7 +27,12 @@ class ApplicationController extends Controller
             return redirect(route('application'));
         }
         $file=$request->file('image');
-        $app->createApplication($request,$file);
+        $data=$request->file('picture');
+        $id=$app->createApplication($request,$file);
+        foreach ($data as $item){
+           $a = new AppImage();
+           $a->createImage($item,$id);
+        }
         return redirect(route('application'));
     }
     public function deleteApp($id){
@@ -51,7 +58,11 @@ class ApplicationController extends Controller
         $category = $b->find($cat_id);
         $data=$a->get()->where('cat_id',$cat_id);
         return view('front-end.showApp',['data'=>$data, 'category'=>$category]);
+    }
+    public function appIndex($cat_id,$id){
+        $a= new Application();
+        $data=$a->find($id);
+        return view('front-end.appIndex', ['data'=>$data]);
         
-    
-}
+    }
 }

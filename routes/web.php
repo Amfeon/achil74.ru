@@ -12,7 +12,8 @@
 */
 
 Route::get('/', 'CategoryController@showCat');
-Route::get('/category/{cat_id}', 'ApplicationController@showApp')->name('app.show');
+Route::get('/{cat_id}/', 'ApplicationController@showApp')->name('app.show');
+Route::get('/{cat_id}/{id}', 'ApplicationController@appIndex')->name('app.index');
 
 Auth::routes();
 

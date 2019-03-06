@@ -13,9 +13,10 @@
                     <input name="price" type="text" class="form-control" id="price" placeholder="Цена услуги" required>
                 </div>
                 <div class="custom-file">
-                    <input  name="image" accept='image/jpeg' multiple='true' type="file" class="custom-file-input" id="customFile">
-                    <label class="custom-file-label" for="customFile">Выбери картинку</label>
+                    <input  name="image" accept='image/jpeg'  type="file" class="custom-file-input" id="customFile">
+                    <label class="custom-file-label" for="customFile">Выбери миниатюру</label>
                 </div>
+
                 <div class="form-group">
                     <label for="exampleFormControlSelect1">Категория услуги</label>
                     <select name ="cat_id" class="form-control" id="exampleFormControlSelect1">
@@ -24,6 +25,10 @@
 
                         @endforeach
                     </select>
+                </div>
+                <div class="custom-file">
+                    <input  name="picture[]" accept='image/jpeg' multiple='true' type="file" class="custom-file-input" id="picture">
+                    <label class="custom-file-label" for="picture">Выбери картинки</label>
                 </div>
                 <div class="form-group mt-3">
                     <label for="exampleFormControlTextarea1">Описание услуги</label>
