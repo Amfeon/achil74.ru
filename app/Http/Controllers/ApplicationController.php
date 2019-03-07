@@ -61,8 +61,10 @@ class ApplicationController extends Controller
     }
     public function appIndex($cat_id,$id){
         $a= new Application();
+        $b = new AppImage();
+        $iamges= $b->get()->where('app_id',$id);
         $data=$a->find($id);
-        return view('front-end.appIndex', ['data'=>$data]);
+        return view('front-end.appIndex', ['data'=>$data,'images' =>$iamges]);
         
     }
 }
