@@ -26,6 +26,7 @@ Route::group(['middleware'=> 'auth'],function(){
     });
     Route::get('/admin/task','Admin\ContactController@index')->name('tasks');
     Route::get('/admin/application/','ApplicationController@getApplication')->name('application');
+    Route::POST('/admin/application/delete-image','ApplicationController@deleteAppImage')->name('application.image.delete');
     Route::get('/admin/application-create','ApplicationController@create')->name('create');
     Route::get('/admin/task/delete/{id}','Admin\ContactController@delete');
     /*category*/

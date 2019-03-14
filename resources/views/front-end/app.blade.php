@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>Кожевенная мастерская Achil - Челябинск</title>
+    <title>Кожевенная мастерская Achil - Челябинск @if(isset($category['title'])) - категория {{$category['title']}} @endif </title>
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/fontello.css') }}" rel="stylesheet">
@@ -36,10 +36,6 @@
 <div id="app">
 @yield('content')
 <!-- app -->
-
-    <modal v-show="showModal" v-on:close="closeBotton" v-on:done="doneBotton">
-    </modal>
-
     <div id="modalForm" class="modal-mask" >
         <div class="modal-wrapper">
             <div class="modal-container">

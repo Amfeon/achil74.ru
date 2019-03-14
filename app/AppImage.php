@@ -17,4 +17,5 @@ class AppImage extends Model
         $this->app_id = $id;
         $this->save();
     }
+
 }

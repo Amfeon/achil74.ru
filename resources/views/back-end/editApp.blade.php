@@ -25,11 +25,32 @@
                         @endforeach
                     </select>
                 </div>
+
+                <div class="custom-file">
+                    <input  name="picture[]" accept='image/jpeg' multiple='true' type="file" class="custom-file-input" id="picture">
+                    <label class="custom-file-label" for="picture">Выбери картинки если хочешь добавить еще</label>
+                </div>
+
                 <div class="form-group mt-3">
                     <label for="exampleFormControlTextarea1">Описание услуги</label>
                     <textarea name="text" id="summernote" class="form-control" id="exampleFormControlTextarea1" rows="5" >{!! $data['text'] !!}</textarea>
                 </div>
                 <button class="btn btn-info" type="submit">изменить</button>
+            </form>
+        </div>
+        <div class="row mt-3">
+            <form method="POST" action="{{route('application.image.delete')}}">
+                {{ csrf_field() }}
+                <ul class="image-list">
+                    @foreach($images as $image)
+                    <li class="image-list_item">
+                        <input name="image_id[]" type="checkbox" value="{{$image->id}}">
+                        <img src="/storage/{{$image->image}}">
+                    </li>
+                        @endforeach
+                </ul>
+                <input name="app_id" type="hidden" value="{{$data['id']}}">
+                <input class="btn btn-danger" type="submit" value="удалить">
             </form>
         </div>
     </div>

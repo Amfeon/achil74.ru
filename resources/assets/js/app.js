@@ -55,7 +55,10 @@ window.swal=require('sweetalert2');
         })
     }
 document.getElementById('done').addEventListener('click',getAjax);
-document.getElementById('seeWorks').addEventListener('click',animationScroll);
+if (document.getElementById('seeWorks')){
+    document.getElementById('seeWorks').addEventListener('click',animationScroll);
+}
+
 function animationScroll(e){
     let V=1;
     e.preventDefault(); //отменяем стандартное поведение
@@ -128,4 +131,44 @@ function getFetch(name,phone) {
        // .catch(alert);
 }
 
+var slideIndex = 1;
+showSlides(slideIndex);
+function plusSlides(n) {
+    showSlides(slideIndex += n);
+}
+function currentSlide(n) {
+    showSlides(slideIndex = n);
+}
 
+function showSlides(n) {
+    var i;
+    var slides = document.getElementsByClassName("blogSlides");
+    if (n > slides.length) {
+        slideIndex = 1
+    }
+    if (n < 1) {
+        slideIndex = slides.length
+    }
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+    }
+    slides[slideIndex - 1].style.display = "flex";
+}
+let images = document.getElementsByClassName('moreImg');
+let block = document.getElementsByClassName('blog-slider');
+let fadeImg = document.getElementsByClassName('fadeImg');
+for(i=0; i<images.length; i++)
+{
+    images[i].addEventListener('click', function () {
+        document.getElementById('slider').style.display='table'
+    });
+    fadeImg[i].addEventListener('click', function () {
+        document.getElementById('slider').style.display='none'
+    });
+}
+document.getElementById('prev').onclick = function () {
+    plusSlides(-1);
+};
+document.getElementById('next').onclick = function () {
+    plusSlides(1);
+}

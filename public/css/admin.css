@@ -11459,3 +11459,30 @@ a.text-dark:focus {
           align-items: center;
 }
 
+.image-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.image-list_item {
+  width: 350px;
+  height: 300px;
+  list-style-type: none;
+  position: relative;
+}
+
+.image-list_item img {
+  width: 100%;
+}
+
+.image-list_item input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50px;
+  height: 50px;
+}
+

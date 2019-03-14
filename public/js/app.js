@@ -126,13 +126,16 @@ var cancel = document.getElementById('cancel');
 cancel.addEventListener('click', function () {
     document.getElementById('modalForm').style.display = 'none';
 });
-for (var i = 0; i < showForm.length; i++) {
-    showForm[i].addEventListener('click', function () {
+for (var _i = 0; _i < showForm.length; _i++) {
+    showForm[_i].addEventListener('click', function () {
         document.getElementById('modalForm').style.display = 'table';
     });
 }
 document.getElementById('done').addEventListener('click', getAjax);
-document.getElementById('seeWorks').addEventListener('click', animationScroll);
+if (document.getElementById('seeWorks')) {
+    document.getElementById('seeWorks').addEventListener('click', animationScroll);
+}
+
 function animationScroll(e) {
     var V = 1;
     e.preventDefault(); //отменяем стандартное поведение
@@ -202,6 +205,47 @@ function getFetch(name, phone) {
     });
     // .catch(alert);
 }
+
+var slideIndex = 1;
+showSlides(slideIndex);
+function plusSlides(n) {
+    showSlides(slideIndex += n);
+}
+function currentSlide(n) {
+    showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+    var i;
+    var slides = document.getElementsByClassName("blogSlides");
+    if (n > slides.length) {
+        slideIndex = 1;
+    }
+    if (n < 1) {
+        slideIndex = slides.length;
+    }
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+    }
+    slides[slideIndex - 1].style.display = "flex";
+}
+var images = document.getElementsByClassName('moreImg');
+var block = document.getElementsByClassName('blog-slider');
+var fadeImg = document.getElementsByClassName('fadeImg');
+for (i = 0; i < images.length; i++) {
+    images[i].addEventListener('click', function () {
+        document.getElementById('slider').style.display = 'table';
+    });
+    fadeImg[i].addEventListener('click', function () {
+        document.getElementById('slider').style.display = 'none';
+    });
+}
+document.getElementById('prev').onclick = function () {
+    plusSlides(-1);
+};
+document.getElementById('next').onclick = function () {
+    plusSlides(1);
+};
 
 /***/ }),
 /* 2 */
